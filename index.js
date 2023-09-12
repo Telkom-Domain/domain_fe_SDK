@@ -74,9 +74,6 @@ exports.iam = {
       console.log('logout url = ' + logout_url)
       window.location.href(logout_url);
     //   return logout_url
-  },
-  testingConsole: () => {
-    console.log("THIS IS DOMAIN SDK");
   }
 
 }
