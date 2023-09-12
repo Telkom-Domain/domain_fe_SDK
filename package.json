@@ -1,5 +1,5 @@
 {
-  "name": "domain-sdk",
+  "name": "telkom-domain-sdk",
   "version": "1.0.0",
   "description": "SDK for integration with Domain",
   "main": "index.js",
