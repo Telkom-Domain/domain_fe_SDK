@@ -8,6 +8,16 @@ function formEncodeLowerCaseKey (payload) {
   return obj;
 }
 
+// function getAuthCode() {
+//   let url = window.location.href;
+//   let queryStringFragments = url.split("?").slice(1);
+
+//   if (queryStringFragments.length === 0) {
+//     throw new Error("There are no query params");
+//   }
+//   return queryStringFragments[0]
+// }
+
 exports.iam = {
 //   IAM_SERVER: 'https://api-oss.domain-dev.site',
   IAM_SERVER: '',
@@ -29,7 +39,7 @@ exports.iam = {
       console.log('redirect uri:' + this.REDIRECT_URI)
       console.log('iam server url:' + this.IAM_SERVER)
   },
-  redirect: () => {
+  loginRedirect: () => {
       let payload = {
           CLIENT_ID: this.CLIENT_ID,
           REDIRECT_URI: this.REDIRECT_URI,
@@ -69,9 +79,9 @@ exports.iam = {
       console.log(data)
       return data
   },
-  logoutURL: () => {
+  logout: () => {
       let logout_url = `${this.IAM_SERVER}/signout?client_id=${encodeURIComponent(this.CLIENT_ID)}`
-      console.log('logout url = ' + logout_url)
+      // console.log('logout url = ' + logout_url)
       window.location.href(logout_url);
     //   return logout_url
   }
